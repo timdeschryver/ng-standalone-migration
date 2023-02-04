@@ -4,16 +4,16 @@ import { provideAnimations } from '@angular/platform-browser/animations';
 import { AuthConfigModule } from './app\\auth\\auth-config.module';
 import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
 import {
-  AuthInterceptor,
+  authInterceptor,
   AutoLoginPartialRoutesGuard,
 } from 'angular-auth-oidc-client';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideRouter } from '@angular/router';
 
 bootstrapApplication(AppComponent, {
   providers: [
-    importProvidersFrom(BrowserModule, AuthConfigModule),
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    importProvidersFrom(AuthConfigModule),
+    provideHttpClient(withInterceptors([authInterceptor()])),
     provideRouter([
       {
         path: 'child',
