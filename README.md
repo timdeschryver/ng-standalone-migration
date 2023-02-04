@@ -10,7 +10,7 @@ After each migration I updated the code and tests to make sure everything was wo
 I realized that by doing this, I was fixing a couple of issues that would've been fixed by the next migration (for example, updating to the AppComponent and a ChildComponent).
 
 That's why I also tried and reexecuted the migrations from the start.
-See this result in the [after](https://github.com/timdeschryver/ng-standalone-migration/tree/after) branch([commit](https://github.com/timdeschryver/ng-standalone-migration/commit/05387787085ff9f7792c167d0cde8c45f7cd9569)).
+See this result in the [after](https://github.com/timdeschryver/ng-standalone-migration/tree/after) branch([commit](https://github.com/timdeschryver/ng-standalone-migration/commit/7e4606a6873f5a206a6ab537b089e9de5304aedc)).
 This time, I only had to add the child component's module to the `AppComponent`, the rest was done by the schematics.
 Of course, I also had manually update the TestBed.
 
@@ -83,5 +83,11 @@ This is not an automatic migration.
 ## 7. Migrate to functional guards
 
 > commit: https://github.com/timdeschryver/ng-standalone-migration/commit/6b1977d24e9770871f432b0eaa0e24efd94d41fe
+
+This is not an automatic migration.
+
+## 8. Update tests, only import standalone components
+
+> commit: https://github.com/timdeschryver/ng-standalone-migration/commit/7e04027511b8ece03522bb3e52e87775e4f7dd8a
 
 This is not an automatic migration.
