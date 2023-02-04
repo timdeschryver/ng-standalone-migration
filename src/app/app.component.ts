@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { OidcSecurityService } from 'angular-auth-oidc-client';
+import { AsyncPipe, JsonPipe } from '@angular/common';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { EagerChildComponent } from './eager-module/eager-child/eager-child.component';
 
 @Component({
   selector: 'app-root',
@@ -12,11 +15,13 @@ import { OidcSecurityService } from 'angular-auth-oidc-client';
       <pre>{{ user$ | async | json }}</pre>
     </div>
 
-    <!-- Manually removed app-eager-child because it isn't imported -->
-    <!-- <app-eager-child></app-eager-child> -->
+    <app-eager-child></app-eager-child>
 
     <router-outlet></router-outlet>
   `,
+  standalone: true,
+  // Manually added EagerChildComponent
+  imports: [RouterLink, RouterOutlet, AsyncPipe, JsonPipe, EagerChildComponent],
 })
 export class AppComponent {
   user$ = this.oidcSecurityService.getUserData();

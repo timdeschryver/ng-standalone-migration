@@ -10,7 +10,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from 'angular-auth-oidc-client';
 
-@NgModule({
+@NgModule(/* TODO(standalone-migration): clean up removed NgModule class manually or run the "Remove unnecessary NgModule classes" step of the migration again. 
+{
   // Manually removed ChildComponent from declarations
   declarations: [AppComponent],
   imports: [
@@ -23,5 +24,5 @@ import { AuthInterceptor } from 'angular-auth-oidc-client';
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
   ],
   bootstrap: [AppComponent],
-})
+} */)
 export class AppModule {}
