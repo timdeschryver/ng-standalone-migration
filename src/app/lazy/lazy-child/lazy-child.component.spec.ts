@@ -1,7 +1,7 @@
 import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
-import { SharedModule } from '../../shared-module/shared.module';
+// Manually removed SharedModule import
 import { LazyChildComponent } from './lazy-child.component';
 
 describe('LazyChildComponent', () => {
@@ -10,7 +10,7 @@ describe('LazyChildComponent', () => {
       // Manually added LazyChildComponent to imports
       imports: [
         HttpClientModule,
-        SharedModule,
+        // Manually removed SharedModule import
         FormsModule,
         LazyChildComponent,
       ],

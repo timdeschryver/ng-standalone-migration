@@ -3,8 +3,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { SensitivePipe } from '../../shared-module/pipes/sensitive.pipe';
-import { SharedModule } from '../../shared-module/shared.module';
-import { EagerModule } from '../eager.module';
+// Manually removed SharedModule and EagerModule import
 import { EagerChildComponent } from './eager-child.component';
 
 describe('EagerChildComponent with declarations', () => {
@@ -32,7 +31,8 @@ describe('EagerChildComponent with shared module', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       // Manually added EagerChildComponent to imports
-      imports: [SharedModule, ReactiveFormsModule, EagerChildComponent],
+      // Manually removed SharedModule  import
+      imports: [ReactiveFormsModule, EagerChildComponent],
     }).compileComponents();
   });
 
@@ -46,7 +46,8 @@ describe('EagerChildComponent with shared module', () => {
 describe('EagerChildComponent with eager module', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [EagerModule, ReactiveFormsModule],
+      // Manually removed EagerModule import
+      imports: [ReactiveFormsModule],
     }).compileComponents();
   });
 

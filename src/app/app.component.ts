@@ -12,7 +12,8 @@ import { OidcSecurityService } from 'angular-auth-oidc-client';
       <pre>{{ user$ | async | json }}</pre>
     </div>
 
-    <app-eager-child></app-eager-child>
+    <!-- Manually removed app-eager-child because it isn't imported -->
+    <!-- <app-eager-child></app-eager-child> -->
 
     <router-outlet></router-outlet>
   `,
