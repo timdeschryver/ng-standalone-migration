@@ -1,9 +1,15 @@
 import { Component } from '@angular/core';
 import { JsonPlaceholderService } from '../services/json-placeholder.service';
+import { SensitivePipe } from '../../shared-module/pipes/sensitive.pipe';
+import { AsyncPipe, JsonPipe } from '@angular/common';
+import { ɵInternalFormsSharedModule, FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { HighlightDirective } from '../../highlight-directive/highlight.directive';
 
 @Component({
-  selector: 'app-lazy-child',
-  template: `
+    selector: 'app-lazy-child',
+    template: `
     <div class="container">
       <p><span appHighlight>lazy-child</span> works!</p>
       <p>{{ 'eager-child works!' | sensitive }}</p>
@@ -15,6 +21,8 @@ import { JsonPlaceholderService } from '../services/json-placeholder.service';
       <pre>{{ todos$ | async | json }}</pre>
     </div>
   `,
+    standalone: true,
+    imports: [HighlightDirective, MatFormFieldModule, MatInputModule, ɵInternalFormsSharedModule, FormsModule, AsyncPipe, JsonPipe, SensitivePipe]
 })
 export class LazyChildComponent {
   form = {

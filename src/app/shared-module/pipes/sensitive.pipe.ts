@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'sensitive',
+    name: 'sensitive',
+    standalone: true
 })
 export class SensitivePipe implements PipeTransform {
   transform(value: string) {

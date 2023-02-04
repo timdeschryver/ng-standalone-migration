@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { OidcSecurityService } from 'angular-auth-oidc-client';
+import { AsyncPipe, JsonPipe } from '@angular/common';
+import { RouterLink, RouterOutlet } from '@angular/router';
+import { EagerChildComponent } from './eager-module/eager-child/eager-child.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +19,8 @@ import { OidcSecurityService } from 'angular-auth-oidc-client';
 
     <router-outlet></router-outlet>
   `,
+  standalone: true,
+  imports: [RouterLink, RouterOutlet, AsyncPipe, JsonPipe, EagerChildComponent],
 })
 export class AppComponent {
   user$ = this.oidcSecurityService.getUserData();
