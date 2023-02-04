@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SensitivePipe } from '../shared-module/pipes/sensitive.pipe';
 
 @Component({
   selector: 'app-child',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core';
       <p>{{ 'child works!' | sensitive }}</p>
     </div>
   `,
+  // Manually set standalone to true
+  standalone: true,
+  // Manually added SensitivePipe to imports
+  imports: [SensitivePipe],
 })
 export class ChildComponent {}

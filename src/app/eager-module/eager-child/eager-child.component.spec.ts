@@ -10,8 +10,14 @@ import { EagerChildComponent } from './eager-child.component';
 describe('EagerChildComponent with declarations', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [EagerChildComponent, SensitivePipe],
-      imports: [MatFormFieldModule, MatInputModule, ReactiveFormsModule],
+      // Manually added EagerChildComponent, SensitivePipe to imports
+      imports: [
+        MatFormFieldModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        EagerChildComponent,
+        SensitivePipe,
+      ],
     }).compileComponents();
   });
 
@@ -25,8 +31,8 @@ describe('EagerChildComponent with declarations', () => {
 describe('EagerChildComponent with shared module', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [EagerChildComponent],
-      imports: [SharedModule, ReactiveFormsModule],
+      // Manually added EagerChildComponent to imports
+      imports: [SharedModule, ReactiveFormsModule, EagerChildComponent],
     }).compileComponents();
   });
 

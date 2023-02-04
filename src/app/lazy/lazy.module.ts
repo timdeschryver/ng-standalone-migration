@@ -7,13 +7,13 @@ import { LazyRoutingModule } from './lazy-routing.module';
 import { HighlightModule } from '../highlight-directive/highlight.module';
 
 @NgModule({
-  declarations: [LazyChildComponent],
-  imports: [
-    CommonModule,
-    LazyRoutingModule,
-    SharedModule,
-    FormsModule,
-    HighlightModule,
-  ],
+    imports: [
+        CommonModule,
+        LazyRoutingModule,
+        SharedModule,
+        FormsModule,
+        HighlightModule,
+        LazyChildComponent
+    ]
 })
 export class LazyModule {}

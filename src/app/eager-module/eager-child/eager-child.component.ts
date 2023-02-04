@@ -1,9 +1,13 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, ɵInternalFormsSharedModule, ReactiveFormsModule } from '@angular/forms';
+import { SensitivePipe } from '../../shared-module/pipes/sensitive.pipe';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { HighlightDirective } from '../../highlight-directive/highlight.directive';
 
 @Component({
-  selector: 'app-eager-child',
-  template: `
+    selector: 'app-eager-child',
+    template: `
     <div class="container" [formGroup]="form">
       <p><span appHighlight>eager-child</span> works!</p>
       <p>{{ 'eager-child works!' | sensitive }}</p>
@@ -13,6 +17,8 @@ import { FormBuilder } from '@angular/forms';
       </mat-form-field>
     </div>
   `,
+    standalone: true,
+    imports: [ɵInternalFormsSharedModule, ReactiveFormsModule, HighlightDirective, MatFormFieldModule, MatInputModule, SensitivePipe]
 })
 export class EagerChildComponent {
   form = this.fb.group({

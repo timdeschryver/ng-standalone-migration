@@ -6,8 +6,7 @@ import { SharedModule } from '../shared-module/shared.module';
 import { HighlightModule } from '../highlight-directive/highlight.module';
 
 @NgModule({
-  declarations: [EagerChildComponent],
-  imports: [CommonModule, SharedModule, ReactiveFormsModule, HighlightModule],
-  exports: [EagerChildComponent],
+    imports: [CommonModule, SharedModule, ReactiveFormsModule, HighlightModule, EagerChildComponent],
+    exports: [EagerChildComponent]
 })
 export class EagerModule {}

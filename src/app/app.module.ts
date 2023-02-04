@@ -5,14 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EagerModule } from './eager-module/eager.module';
 import { AuthConfigModule } from './auth/auth-config.module';
-import { ChildComponent } from './child/child.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared-module/shared.module';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from 'angular-auth-oidc-client';
 
 @NgModule({
-  declarations: [AppComponent, ChildComponent],
+  // Manually removed ChildComponent from declarations
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

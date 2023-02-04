@@ -7,8 +7,13 @@ import { LazyChildComponent } from './lazy-child.component';
 describe('LazyChildComponent', () => {
   it('should create the component', async () => {
     await TestBed.configureTestingModule({
-      declarations: [LazyChildComponent],
-      imports: [HttpClientModule, SharedModule, FormsModule],
+      // Manually added LazyChildComponent to imports
+      imports: [
+        HttpClientModule,
+        SharedModule,
+        FormsModule,
+        LazyChildComponent,
+      ],
     }).compileComponents();
 
     const fixture = TestBed.createComponent(LazyChildComponent);

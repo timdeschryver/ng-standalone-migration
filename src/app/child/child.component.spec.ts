@@ -5,7 +5,8 @@ import { ChildComponent } from './child.component';
 describe('ChildComponent', () => {
   it('should create the component', async () => {
     await TestBed.configureTestingModule({
-      declarations: [ChildComponent, SensitivePipe],
+      // Manually added ChildComponent, SensitivePipe to imports
+      imports: [ChildComponent, SensitivePipe],
     }).compileComponents();
 
     const fixture = TestBed.createComponent(ChildComponent);
